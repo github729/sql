@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2019 at 12:52 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: May 03, 2019 at 06:50 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -326,18 +326,6 @@ CREATE TABLE `education` (
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `education`
---
-
-INSERT INTO `education` (`id`, `resumeId`, `instituteName`, `qualification`, `result`, `startingDate`, `endingDate`, `description`, `createdAt`, `updatedAt`) VALUES
-(20, 17, 'Prakasam Engineering College', 'B.tech', '88%', '2012', '2016', 'You should aim to format your resume in the same manner. Your education section should briefly detail your academic activities—including relevant clubs, athletics, theater, student government, or other projects—because they are important indicators of you', '2019-04-26 09:10:41', '2019-04-26 09:10:41'),
-(21, 17, 'Sri Saraswathi junior college', 'Intermediate', '97%', '2010', '2012', 'Notice how her first experience listed is a semester studying abroad. She even quantifies her achievements from this experience, giving any hiring manager a firm idea of how competent a candidate she is, given her communication skills, writing abilities, ', '2019-04-26 09:10:41', '2019-04-26 09:10:41'),
-(22, 18, '', '', '', '', '', '', '2019-04-27 11:04:09', '2019-04-27 11:04:09'),
-(23, 19, '', '', '', '', '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16'),
-(24, 20, '', '', '', '', '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16'),
-(25, 21, '', '', '', '', '', '', '2019-04-27 11:04:17', '2019-04-27 11:04:17');
-
 -- --------------------------------------------------------
 
 --
@@ -349,38 +337,27 @@ CREATE TABLE `jobs` (
   `category` varchar(255) DEFAULT NULL,
   `jobType` varchar(256) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `applyUrl` text,
-  `requirements` text,
+  `applyUrl` text NOT NULL,
+  `requirements` text NOT NULL,
   `description` text NOT NULL,
   `state` varchar(255) NOT NULL,
-  `city` varchar(255) DEFAULT NULL,
-  `minSalary` int(11) NOT NULL,
-  `maxSalary` int(11) NOT NULL,
-  `salaryType` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `minSalary` int(11) DEFAULT NULL,
+  `maxSalary` int(11) DEFAULT NULL,
+  `salaryType` varchar(255) DEFAULT NULL,
   `experience` varchar(255) NOT NULL,
   `function` text NOT NULL,
   `jobDeadLine` date DEFAULT NULL,
   `industry` varchar(255) NOT NULL,
   `companyName` varchar(255) NOT NULL,
   `companySize` int(11) DEFAULT NULL,
-  `companySite` varchar(255) DEFAULT NULL,
-  `email` varchar(255) NOT NULL,
-  `mobileNumber` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
+  `companySite` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `mobileNumber` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `jobs`
---
-
-INSERT INTO `jobs` (`id`, `category`, `jobType`, `title`, `applyUrl`, `requirements`, `description`, `state`, `city`, `minSalary`, `maxSalary`, `salaryType`, `experience`, `function`, `jobDeadLine`, `industry`, `companyName`, `companySize`, `companySite`, `email`, `mobileNumber`, `address`, `createdAt`, `updatedAt`) VALUES
-(1, 'Software Engineer', 'Full Time', 'xff', NULL, NULL, 'dffgvcbn', 'Ap', 'Visakhapatnam', 1200, 2000, 'Daily', 'Mid Level', '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<ul>\r\n	<li>Expert in any one of the modern JavaScript MVVM/MVC frameworks (AngularJS, JQuery, NodeJS, GruntJS)</li>\r\n	<li>Familiar with testing frameworks (Ex. Jasmine)</li>\r\n	<li>Test runner framework (Ex. Karma)</li>\r\n	<li>Hand on and implements complex AngularJS applications, directives, controllers, services</li>\r\n	<li>Critical thinker and problem solving skills</li>\r\n	<li>Great interpersonal and communication skills</li>\r\n</ul>\r\n</body>\r\n</html>\r\n', '2019-05-15', 'fdf', 'fggf', 200, 'www.anaghasoftech.com', 'sfdfg', 'ff', 'cvxbvb bn', '2019-04-24 11:30:17', '2019-04-24 11:30:17'),
-(2, 'Software Engineer', 'Part Time', 'xff', NULL, NULL, 'dffgvcbn', 'Andra Pradesh', 'Hyderabad', 1500, 2500, 'Daily', 'Mid Level', '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<ul>\r\n	<li>Expert in any one of the modern JavaScript MVVM/MVC frameworks (AngularJS, JQuery, NodeJS, GruntJS)</li>\r\n	<li>Familiar with testing frameworks (Ex. Jasmine)</li>\r\n	<li>Test runner framework (Ex. Karma)</li>\r\n	<li>Hand on and implements complex AngularJS applications, directives, controllers, services</li>\r\n	<li>Critical thinker and problem solving skills</li>\r\n	<li>Great interpersonal and communication skills</li>\r\n</ul>\r\n</body>\r\n</html>\r\n', '2019-05-30', 'fdf', 'fggf', 500, 'www.technoidentity.com', 'sfdfg', 'ff', 'cvxbvb bn', '2019-04-24 11:30:53', '2019-04-24 11:30:53'),
-(3, 'Program Development', 'Contract', 'Looking For Angular Developer', NULL, NULL, 'Looking For Angular Developer', 'karnataka', 'Banglore', 1234, 4561, 'Monthly', 'Mid Level', '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<ul>\r\n	<li>Expert in any one of the modern JavaScript MVVM/MVC frameworks (AngularJS, JQuery, NodeJS, GruntJS)</li>\r\n	<li>Familiar with testing frameworks (Ex. Jasmine)</li>\r\n	<li>Test runner framework (Ex. Karma)</li>\r\n	<li>Hand on and implements complex AngularJS applications, directives, controllers, services</li>\r\n	<li>Critical thinker and problem solving skills</li>\r\n	<li>Great interpersonal and communication skills</li>\r\n</ul>\r\n</body>\r\n</html>\r\n', '2019-06-12', 'IT', 'Anagha Softech ', NULL, NULL, 'anusha@gmail.com', '7095863545', 'Banjarahills', '2019-04-24 12:10:42', '2019-04-24 12:10:42'),
-(5, 'Project Manager', 'full-time', 'Manager - Enterprise Sales', 'https://www.naukri.com/job-listings-Manager-Enterprise-Sales-Happay-Expense-Management-Solution-for-Businesses-Bengaluru-Chennai-Hyderabad-Kolkata-3-to-8-years-250419900895?src=seo_srp&sid=15561813357393&xp=1&px=1', '- Understand partner objectives : What they need, key business metrics & how to grow their business \n\n- Product : Coordinate with the product team and get specific requirements and integrations built as and when needed \n\n- Brainstorm new and creative revenue growth strategies and partnership opportunities.', '- Own end to end business development/sales funnel and be responsible for achieving revenue targets \n\n- Will be responsible for partnering with enterprise clients like Banks, OEMs, Telecom companies etc. \n\n- Understand consumers : Who are our target consumers, what are their needs \n\n', 'Tamilnadu', 'Chennai', 200, 500, 'Yearly', 'Mid Level', '<html> <head> 	<title></title> </head> <body> <ul> 	<li>Expert in any one of the modern JavaScript MVVM/MVC frameworks (AngularJS, JQuery, NodeJS, GruntJS)</li> 	<li>Familiar with testing frameworks (Ex. Jasmine)</li> 	<li>Test runner framework (Ex. Karma)</li> 	<li>Hand on and implements complex AngularJS applications, directives, controllers, services</li> 	<li>Critical thinker and problem solving skills</li> 	<li>Great interpersonal and communication skills</li> </ul> </body> </html>', '2019-05-16', 'Marketing and Advertisements', 'Happay-Expense', 200, 'www.happay.com', 'anushamanne7@gmail.com', '7095863545', 'Bengaluru, Chennai, Hyderabad, Kolkata', '2019-04-25 08:40:25', '2019-04-25 08:40:25'),
-(6, 'Program Development', 'full-time', 'Looking for Angular Senior Developer', 'http://www.anaghasoftech.com/careers/', 'Looking for the candidates having experience on Angular JS, Node JS with MVC framework for Opening with top IT firm in Hyderabad Location.', 'Deep expertise and hands on experience with Web Applications and programming languages and frameworks such as HTML, CSS, Bootstrap, Typescript, JavaScript, JQuery, ReactJS, Angular 6/7\nStrong expertise with HTML, CSS, and writing crossbrowser compatible code.\nGood understanding of AJAX and JavaScript DOM manipulation Techniques\nExperience with RESTful services\nExperience in JavaScript build tools like grunt or gulp', 'Mumbai', 'pune', 500, 600, 'Monthly', 'Mid Level', '<html>\n<head>\n	<title></title>\n</head>\n<body>\n<ul>\n	<li>Expert in any one of the modern JavaScript MVVM/MVC frameworks (AngularJS, JQuery, NodeJS, GruntJS)</li>\n	<li>Familiar with testing frameworks (Ex. Jasmine)</li>\n	<li>Test runner framework (Ex. Karma)</li>\n	<li>Hand on and implements complex AngularJS applications, directives, controllers, services</li>\n	<li>Critical thinker and problem solving skills</li>\n	<li>Great interpersonal and communication skills</li>\n</ul>\n</body>\n</html>\n', '2019-06-20', 'IT', 'Anagha Softech ', 50, 'http://www.anaghasoftech.com', 'info@anaghasoftech.com', '+91 - (40) 2338 6511', 'H.No: 8-2-608/27, Mastan Mansion, Gaffer Khan Colony, Road No. 10, Banjarahills, Hyderabad, TS, India -500034', '2019-04-25 12:51:23', '2019-04-25 12:51:23');
 
 -- --------------------------------------------------------
 
@@ -396,19 +373,6 @@ CREATE TABLE `languages` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `languages`
---
-
-INSERT INTO `languages` (`id`, `resumeId`, `name`, `rating`, `createdAt`, `updatedAt`) VALUES
-(16, 17, 'English', '2', '2019-04-26 09:10:41', '2019-04-26 09:10:41'),
-(17, 17, 'Telugu', '1', '2019-04-26 09:10:41', '2019-04-26 09:10:41'),
-(18, 17, 'Hindi', '4', '2019-04-26 09:10:41', '2019-04-26 09:10:41'),
-(19, 18, '', '', '2019-04-27 11:04:09', '2019-04-27 11:04:09'),
-(20, 19, '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16'),
-(21, 20, '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16'),
-(22, 21, '', '', '2019-04-27 11:04:17', '2019-04-27 11:04:17');
 
 -- --------------------------------------------------------
 
@@ -433,17 +397,6 @@ CREATE TABLE `resumes` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `resumes`
---
-
-INSERT INTO `resumes` (`id`, `userId`, `fullName`, `addInfo`, `careerObjective`, `specialQualification`, `fatherName`, `motherName`, `dob`, `nationality`, `gender`, `address`, `declaration`, `createdAt`, `updatedAt`) VALUES
-(17, 1, 'Anusha Manne', 'Additional information may include civic activities, awards and recognitions, volunteering, or cultural skills like language or travel. It may also include other interests or activities that may show leadership, character, or qualities you feel are benefi', 'An excellent academic record, ability to understand and test software, working knowledge of Azure, and a strong understanding of core internet technologies. I seek to work as a System Engineer to further my knowledge in the IT domain and utilize my skills', '<html>\n<head>\n	<title></title>\n</head>\n<body>\n<ol>\n	<li>Communication</li>\n	<li>Ability to Work Under Pressure</li>\n	<li>Decision Making</li>\n	<li>Time Management</li>\n	<li>Self-motivation</li>\n	<li>Conflict Resolution</li>\n	<li>Leadership</li>\n	<li>Adapt', 'Mohan ', 'jaya', '1995-05-06 18:30:00', 'indian', 'Female', 'H.No: 8-2-608/27,Mastan Mansion, Gaffar Khan Colony,Road No. 10, Banjarahills, Hyderabad, Telangana 500034', 'I hereby declare that the information mentioned above is correct up to my knowledge and bear the responsibility for the correctness of the mentioned particulars.', '2019-04-26 09:10:41', '2019-04-26 09:10:41'),
-(18, 1, '', '', '', '<html>\n<head>\n	<title></title>\n</head>\n<body></body>\n</html>\n', '', '', '0000-00-00 00:00:00', '', '', '', '', '2019-04-27 11:04:09', '2019-04-27 11:04:09'),
-(19, 1, '', '', '', '<html>\n<head>\n	<title></title>\n</head>\n<body></body>\n</html>\n', '', '', '0000-00-00 00:00:00', '', '', '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16'),
-(20, 1, '', '', '', '<html>\n<head>\n	<title></title>\n</head>\n<body></body>\n</html>\n', '', '', '0000-00-00 00:00:00', '', '', '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16'),
-(21, 1, '', '', '', '<html>\n<head>\n	<title></title>\n</head>\n<body></body>\n</html>\n', '', '', '0000-00-00 00:00:00', '', '', '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16');
 
 -- --------------------------------------------------------
 
@@ -541,7 +494,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `confirmPassword`, `mobileNumber`, `city`, `role`, `createdAt`, `updatedAt`) VALUES
-(1, 'Anusha Manne', 'anushamanne7@gmail.com', '$2a$08$wHJQeq.eGV7MlqC5WcvtGOanvxsrajBLpFNwuERxhG10vM.gcx/oW', 'anuraji972', '709583545', 'HYd', 'Employe', '0000-00-00 00:00:00', '2019-04-27 05:01:07');
+(1, 'Anusha Manne', 'anushamanne7@gmail.com', '$2a$08$sH2ZrfbmPNeg2P3G.kuUuuF.P/UdiuOQVSu7qJsaNiJcEn6YlL9Ae', 'anuraji972', '7095863545', '', 'Recruiter', '2019-05-03 03:06:44', '2019-05-03 03:06:44');
 
 -- --------------------------------------------------------
 
@@ -560,18 +513,6 @@ CREATE TABLE `workhistories` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `workhistories`
---
-
-INSERT INTO `workhistories` (`id`, `resumeId`, `companyName`, `designation`, `joiningDate`, `relievingDate`, `jobDescription`, `createdAt`, `updatedAt`) VALUES
-(18, 17, 'Angha Softech', 'Junior software developer', '2018', 'Present', 'Include detailed job descriptions of relevant positions in your field and a brief mention of other positions: internships, temporary gigs, freelancing\n\nList and describe all paid work you’ve ever done, including internships, part-time or temporary work, f', '2019-04-26 09:10:41', '2019-04-26 09:10:41'),
-(19, 17, 'Sun kpo llp', 'Junior sofware developer', '2017', '2018', 'This way, you’ll put your best foot forward—the pinnacle of your career, your most recent job, will get the most attention. \n\nListing your jobs in chronologically descending is the cornerstone of the classic reverse-chronological resume format. It’s ideal', '2019-04-26 09:10:41', '2019-04-26 09:10:41'),
-(20, 18, '', '', '', '', '', '2019-04-27 11:04:09', '2019-04-27 11:04:09'),
-(21, 19, '', '', '', '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16'),
-(22, 20, '', '', '', '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16'),
-(23, 21, '', '', '', '', '', '2019-04-27 11:04:16', '2019-04-27 11:04:16');
 
 --
 -- Indexes for dumped tables
@@ -662,25 +603,25 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `education`
 --
 ALTER TABLE `education`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `resumes`
 --
 ALTER TABLE `resumes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `states`
@@ -698,7 +639,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `workhistories`
 --
 ALTER TABLE `workhistories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -708,25 +649,25 @@ ALTER TABLE `workhistories`
 -- Constraints for table `education`
 --
 ALTER TABLE `education`
-  ADD CONSTRAINT `education_ibfk_1` FOREIGN KEY (`resumeId`) REFERENCES `resumes` (`id`);
+  ADD CONSTRAINT `education_ibfk_1` FOREIGN KEY (`resumeId`) REFERENCES `resumes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `languages`
 --
 ALTER TABLE `languages`
-  ADD CONSTRAINT `languages_ibfk_1` FOREIGN KEY (`resumeId`) REFERENCES `resumes` (`id`);
+  ADD CONSTRAINT `languages_ibfk_1` FOREIGN KEY (`resumeId`) REFERENCES `resumes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `resumes`
 --
 ALTER TABLE `resumes`
-  ADD CONSTRAINT `resumes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `resumes_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `workhistories`
 --
 ALTER TABLE `workhistories`
-  ADD CONSTRAINT `workhistories_ibfk_1` FOREIGN KEY (`resumeId`) REFERENCES `resumes` (`id`);
+  ADD CONSTRAINT `workhistories_ibfk_1` FOREIGN KEY (`resumeId`) REFERENCES `resumes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
