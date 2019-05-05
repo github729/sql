@@ -350,7 +350,7 @@ CREATE TABLE `jobs` (
   `jobDeadLine` varchar(255) DEFAULT NULL,
   `industry` varchar(255) NOT NULL,
   `companyName` varchar(255) NOT NULL,
-  `companySize` int(11) DEFAULT 0,
+  `companySize` varchar(20) DEFAULT NULL,
   `companySite` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `mobileNumber` varchar(255) DEFAULT NULL,
