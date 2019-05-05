@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2019 at 06:50 AM
+-- Generation Time: May 05, 2019 at 06:24 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -342,8 +342,8 @@ CREATE TABLE `jobs` (
   `description` text NOT NULL,
   `state` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
-  `minSalary` int(11) DEFAULT NULL,
-  `maxSalary` int(11) DEFAULT NULL,
+  `minSalary` varchar(255) DEFAULT NULL,
+  `maxSalary` varchar(255) DEFAULT NULL,
   `salaryType` varchar(255) DEFAULT NULL,
   `experience` varchar(255) NOT NULL,
   `function` text NOT NULL,
@@ -358,6 +358,13 @@ CREATE TABLE `jobs` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `category`, `jobType`, `title`, `applyUrl`, `requirements`, `description`, `state`, `city`, `minSalary`, `maxSalary`, `salaryType`, `experience`, `function`, `jobDeadLine`, `industry`, `companyName`, `companySize`, `companySite`, `email`, `mobileNumber`, `address`, `createdAt`, `updatedAt`) VALUES
+(1, 'Software Engineer', 'full-time', 'Primary responsibility would be designing, developing, testing & deploying Android applications.', 'http://www.appzoy.com/careers', '<html>\n<head>\n	<title></title>\n</head>\n<body>\n<p>&bull; B.E./B.Tech/M.E./M.Tech/MCA from an accredited university with good academics.<br />\n&bull; 1-3 years of Android app development experience with demonstrable portfolio of published apps<br />\n&bull; Strong SW engineering foundation and analytical &amp; problem solving skills.<br />\n&bull; Expert in programming in JAVA&nbsp;<br />\n&bull; Experience in Android application development incl. dynamic layouts, Android classes, databases, social network/payment integrations, consuming SOAP/JSON/REST web services from mobile apps<br />\n&bull; Experience in Android development environment such as Android Studio, SDK<br />\n&bull; Hand-on experience in configuration management way of working such as GIT, BitBucket.<br />\n&bull; Excellent verbal &amp; written communication skills<br />\n&bull; Excellent Team Player.</p>\n</body>\n</html>\n', 'Software Engineer: Primary responsibility would be designing, developing, testing & deploying Android applications.	', 'Karnataka', 'Bengaluru', '0', '0', '', 'Mid Level', '<html>\n<head>\n	<title></title>\n</head>\n<body>\n<p>&bull; Determines feasibility by evaluating analysis, requirements and proposed solutions.<br />\n&bull; Documents and demonstrates solutions by developing documentation, flowcharts, layouts, diagrams, code comments and clear code.<br />\n&bull; Develops software solutions by studying information needs; conferring with architect; studying systems flow, data usage, and work processes; investigating problem areas; following the software development lifecycle.<br />\n&bull; Updates job knowledge by studying state-of-the-art development tools, programming techniques, and computing equipment; participating in educational opportunities; reading professional publications; maintaining personal networks.<br />\n&bull; Protects operations by keeping information confidential.<br />\n&bull; Provides information by collecting, analyzing &amp; summarizing development issues.<br />\n&bull; Accomplishes engineering &amp; organization mission by completing identified results as needed.</p>\n</body>\n</html>\n', '0000-00-00', 'IT', 'AppZoy', 0, 'http://www.appzoy.com', '', '080 42021822', '1st floor, above Celio, 90, 27th Main Road, Sector 1, HSR Layout, Bengaluru, Karnataka 560102', '2019-05-05 04:18:35', '2019-05-05 04:18:35');
 
 -- --------------------------------------------------------
 
