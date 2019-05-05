@@ -347,7 +347,7 @@ CREATE TABLE `jobs` (
   `salaryType` varchar(255) DEFAULT NULL,
   `experience` varchar(255) NOT NULL,
   `function` text NOT NULL,
-  `jobDeadLine` date DEFAULT NULL,
+  `jobDeadLine` varchar(255) DEFAULT NULL,
   `industry` varchar(255) NOT NULL,
   `companyName` varchar(255) NOT NULL,
   `companySize` int(11) DEFAULT NULL,
